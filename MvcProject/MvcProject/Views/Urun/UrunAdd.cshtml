@@ -1,0 +1,32 @@
+﻿@model MvcProject.Models.Entity.Urunler
+@{
+    ViewBag.Title = "UrunAdd";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" name="UrunAd" required="" maxlength="20"/>
+    </div>
+    <div>
+        <label>Marka</label>
+        <input type="text" class="form-control" name="Marka" required=""/>
+    </div>
+    <div>
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(m=>m.Kategoriler.KategoriId, (List<SelectListItem>)ViewBag.Degerler,  new {@class="form-control"})     
+    </div>
+    <div>
+        <label>Fiyat</label>
+        <input type="text" class="form-control" name="Fiyat" />
+    </div>
+    <div>
+        <label>Stok</label>
+        <input type="text" class="form-control" name="Stok" />
+    </div>
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">Yeni Ürün Ekle</button>
+    </div>
+</form>
